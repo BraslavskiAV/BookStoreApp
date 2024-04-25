@@ -1,0 +1,83 @@
+.store__container{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.store__title-link{
+  text-decoration: none;
+}
+
+.store__title{
+  width: 80%;
+height: 64px;
+top: 176px;
+left: 400px;
+gap: 0px;
+opacity: 0px;
+font-family: Bebas Neue;
+font-size: 56px;
+font-weight: 500;
+line-height: 64px;
+text-align: left;
+color: #313037;
+
+}
+
+.items{
+  width: 30%;
+height: 454px;
+padding: 0px 0px 1px 0px;
+}
+
+.book__list{
+  display: flex;
+  justify-content: space-between;
+}
+
+.item__image{
+  width: 100%;
+  height: 264px;
+  display: flex;
+  justify-content: center;
+  background-color: #F4EEFD;
+}
+
+.image{
+  width: 240px;
+  height: 264px;
+}
+
+.item__title{
+  font-family: Bebas Neue;
+font-size: 24px;
+font-weight: 400;
+line-height: 32px;
+text-align: left;
+height: 65px;
+}
+
+.item__year{
+  margin: 0;
+  font-family: roboto;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+color: #A8A8A8;
+
+}
+
+.price__block{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.item__price{
+  font-family: Bebas Neue;
+font-size: 24px;
+font-weight: 400;
+line-height: 32px;
+text-align: left;
+}
