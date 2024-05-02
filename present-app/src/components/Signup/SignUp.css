@@ -1,0 +1,14 @@
+.signup__container{
+  width: 50%;
+  height: 710px;
+  margin: 0 auto;
+  border: 1px solid #E7E7E7;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 30px;
+}
+
+.password__toggle{
+  margin-top: 5px;
+  border: 1px solid #E7E7E7;
+}

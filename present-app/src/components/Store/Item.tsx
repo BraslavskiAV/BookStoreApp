@@ -2,20 +2,24 @@ import { Link } from 'react-router-dom';
 import rating from '../../assets/Frame 1561.svg';
 import React, { useState, useEffect } from 'react';
 
-interface Book {
-  error: string;
+export interface IBook {
+  error?: string | any;
   title: string;
-  year: string;
-  price: string;
+  year: string | number;
+  price: string | number;
   image: string;
   url: string;
-  pdf: {
+  pdf?: {
     [key: string]: string;
   };
 }
 
-function Book() {
-  const [book, setBook] = useState<Book | null>(null);
+interface IBookProps {
+  book: IBook;
+}
+
+function Book({ book }: IBookProps) {
+  const [bookinfo, setBook] = useState<IBook | null>(null);
 
   useEffect(() => {
     fetch('https://api.itbook.store/1.0/new')
@@ -24,7 +28,7 @@ function Book() {
       .catch(error => console.error(error));
   }, []);
 
-  if (!book) {
+  if (!bookinfo) {
     return <div>Loading...</div>;
   }
 
@@ -32,19 +36,19 @@ function Book() {
     <>
     <div className='items'>
       <div className='item__image'>
-        <img src={book.image} alt={book.title} className='image' />
+        <img src={bookinfo.image} alt={bookinfo.title} className='image' />
       </div>
-      <Link to={'/bookcard'} className='item__title-link'>
-      <h2 className='item__title'>{book.title}</h2>
+      <Link to={'/bookcard'} style={{ color: 'inherit', cursor: 'pointer', textDecoration: 'none' }}>
+      <h2 className='item__title'>{bookinfo.title}</h2>
       </Link>
       <p className='item__year'>Year: 2018</p>
       <div className='price__block'>
-        <p className='item__price'>{book.price}</p>
+        <p className='item__price'>{bookinfo.price}</p>
         <img src={rating} alt='rating'></img>
       </div>
-      {book.pdf && (
+      {bookinfo.pdf && (
         <ul>
-          {Object.entries(book.pdf).map(([chapter, url]) => (
+          {Object.entries(bookinfo.pdf).map(([chapter, url]) => (
             <li key={chapter}>
               <a href={url}>{chapter}</a>
             </li>
@@ -52,6 +56,7 @@ function Book() {
         </ul>
       )}
     </div>
+    
     </>
   );
 }

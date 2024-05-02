@@ -31,7 +31,10 @@ padding: 0px 0px 1px 0px;
 
 .book__list{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  width: 100%;
+
 }
 
 .item__image{
@@ -72,6 +75,10 @@ color: #A8A8A8;
   align-items: center;
   justify-content: space-between;
   height: 60px;
+}
+
+.pr{
+  height: 98px;
 }
 
 .item__price{

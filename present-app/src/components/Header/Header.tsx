@@ -17,10 +17,14 @@ function Header() {
           </div>
           <div className='right-block'>
             <button className="liked">
-              <img src={Liked} alt='liked'></img>
+              <Link to={'/favorites'}>
+                <img src={Liked} alt='liked'></img>
+              </Link>
             </button>
-            <button className="myfav">
-              <img src={User} alt='user'></img>
+            <button className="myuser">
+              <Link to={'/signin'}>
+                <img src={User} alt='user'></img>
+              </Link>
             </button>
           </div>
         </div>

@@ -1,16 +1,16 @@
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
-import Pagination from "../components/Pagination/Pagination";
-import Store from "../components/Store/Store";
+import SignIn from "../components/SignIn/SignIn";
 
-function Main() {
+
+function SignPage() {
   return (  
     <>
     <Header></Header>
-    <Store/>
+    <SignIn></SignIn>
     <Footer/>
     </>
   );
 }
 
-export default Main;
+export default SignPage;
